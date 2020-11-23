@@ -1,8 +1,27 @@
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
+
 public class CoursesChoosing
 {
     public static void main(String[] args)
     {
 
+    }
+}
+
+class Printer {
+    public static BufferedWriter stdout;
+
+    static {
+        stdout = new BufferedWriter(new OutputStreamWriter(System.out, StandardCharsets.UTF_8));
+    }
+
+    public static void print(String str) throws IOException
+    {
+        stdout.write(str);
+        stdout.flush();
     }
 }
 
