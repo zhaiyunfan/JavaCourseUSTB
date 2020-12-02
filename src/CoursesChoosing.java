@@ -31,16 +31,16 @@ public class CoursesChoosing
                 courseName = scanner.next();
                 courseHours = scanner.nextInt();
 
-                courses[j] = new Course(courseName,courseHours);
+                courses[j] = new Course(courseName, courseHours);
             }
-            students[i] = new Student(name,grade,courses);
+            students[i] = new Student(name, grade, courses);
         }
         Printer printer = new Printer();
         for (int i = 0; i < n; i++)
         {
             try
             {
-                printer.print("第"+(i+1)+"学生信息如下:\n");
+                printer.print("第" + (i + 1) + "学生信息如下:\n");
             } catch (IOException e)
             {
                 e.printStackTrace();
@@ -50,10 +50,12 @@ public class CoursesChoosing
     }
 }
 
-class Printer {
+class Printer
+{
     public static BufferedWriter stdout;
 
-    static {
+    static
+    {
         stdout = new BufferedWriter(new OutputStreamWriter(System.out, StandardCharsets.UTF_8));
     }
 
@@ -122,13 +124,13 @@ class Student
         Printer printer = new Printer();
         try
         {
-            printer.print(name+" "+grade+"年级\n");
+            printer.print(name + " " + grade + "年级\n");
             printer.print("选修的课程包括:\n");
             for (int i = 0; i < courses.length; i++)
             {
-                printer.print("("+(i+1)+")"+courses[i].getCourseName()+"\t"+courses[i].getCourseHour()+"分\n");
+                printer.print("(" + (i + 1) + ")" + courses[i].getCourseName() + "\t" + courses[i].getCourseHour() + "分\n");
             }
-            printer.print("总学分:"+this.getHours()+"\n");
+            printer.print("总学分:" + this.getHours() + "\n");
         } catch (IOException e)
         {
             e.printStackTrace();
